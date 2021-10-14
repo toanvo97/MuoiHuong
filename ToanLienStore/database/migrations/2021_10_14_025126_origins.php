@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class Categories extends Migration
+class Origins extends Migration
 {
     /**
      * Run the migrations.
@@ -14,13 +14,11 @@ class Categories extends Migration
     public function up()
     {
         //
-        Schema::create('categoies', function (Blueprint $table) {
-            $table->increments('idCate');
-            $table->string('name',250);
-            $table->string('meta',250);
-            $table->string('link');
-            $table->integer('order');
-            $table->boolean('show');
+        Schema::create('origins', function (Blueprint $table) {
+            $table->increments('idOrigin');
+            $table->string('name');
+            $table->string('meta');
+            $table->string('show');
             $table->timestamps();
         });
     }
@@ -33,6 +31,6 @@ class Categories extends Migration
     public function down()
     {
         //
-        Schema::dropIfExists('categoies');
+        Schema::dropIfExists('origins');
     }
 }

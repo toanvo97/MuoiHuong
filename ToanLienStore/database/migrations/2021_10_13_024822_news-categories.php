@@ -14,6 +14,15 @@ class NewsCategories extends Migration
     public function up()
     {
         //
+        Schema::create('newsCategories', function (Blueprint $table) {
+            $table->increments('idCate');
+            $table->string('name',250);
+            $table->string('meta',250);
+            $table->string('link');
+            $table->integer('order');
+            $table->boolean('show');
+            $table->timestamps();
+        });
     }
 
     /**
@@ -24,5 +33,6 @@ class NewsCategories extends Migration
     public function down()
     {
         //
+        Schema::dropIfExists('newsCategories');
     }
 }

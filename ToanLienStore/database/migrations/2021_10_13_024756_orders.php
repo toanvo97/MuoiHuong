@@ -14,6 +14,27 @@ class Orders extends Migration
     public function up()
     {
         //
+        Schema::create('orders', function (Blueprint $table) {
+            $table->increments('idOrder');
+            $table->string('name');
+            $table->string('meta');
+            $table->string('firstName');
+            $table->string('lastName');
+            $table->string('country');
+            $table->string('address');
+            $table->string('city');
+            $table->string('phoneNumber');
+            $table->string('email');
+            $table->string('anotherAddress');
+            $table->string('ortherNote');
+            $table->integer('idUser')->unsigned();
+            $table->date('orderDateConfirmed');
+            $table->date('orderDateDelivered');
+            $table->string('link');
+            $table->boolean('show');
+            $table->timestamps();
+        });
+
     }
 
     /**
