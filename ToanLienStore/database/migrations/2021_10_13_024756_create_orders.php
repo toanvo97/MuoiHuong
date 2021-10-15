@@ -27,14 +27,17 @@ class Orders extends Migration
             $table->string('email');
             $table->string('anotherAddress');
             $table->string('ortherNote');
-            $table->integer('idUser')->unsigned();
+            $table->integer('idUserClient')->unsigned();
             $table->date('orderDateConfirmed');
             $table->date('orderDateDelivered');
             $table->string('link');
             $table->boolean('show');
             $table->timestamps();
         });
-
+        
+        Schema::table('orders', function (Blueprint $table) {
+            $table->foreign('idUserClient')->references('idUserClient')->on('usersClient');
+        });
     }
 
     /**
@@ -45,5 +48,6 @@ class Orders extends Migration
     public function down()
     {
         //
+        Schema::dropIfExists('orders');
     }
 }

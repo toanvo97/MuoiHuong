@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class Origins extends Migration
+class Languages extends Migration
 {
     /**
      * Run the migrations.
@@ -14,11 +14,12 @@ class Origins extends Migration
     public function up()
     {
         //
-        Schema::create('origins', function (Blueprint $table) {
-            $table->increments('idOrigin');
+        Schema::create('languages', function (Blueprint $table) {
+            $table->increments('idLanguage');
             $table->string('name');
-            $table->string('meta');
-            $table->string('show');
+            $table->meta('meta');
+            $table->integer('order');
+            $table->boolean('show');
             $table->timestamps();
         });
     }
@@ -31,6 +32,6 @@ class Origins extends Migration
     public function down()
     {
         //
-        Schema::dropIfExists('origins');
+        Schema::dropIfExists('languages');
     }
 }

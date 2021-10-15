@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class Languages extends Migration
+class Origins extends Migration
 {
     /**
      * Run the migrations.
@@ -14,6 +14,12 @@ class Languages extends Migration
     public function up()
     {
         //
+        Schema::create('origins', function (Blueprint $table) {
+            $table->increments('idOrigin');
+            $table->string('name');
+            $table->string('show');
+            $table->timestamps();
+        });
     }
 
     /**
@@ -24,5 +30,6 @@ class Languages extends Migration
     public function down()
     {
         //
+        Schema::dropIfExists('origins');
     }
 }

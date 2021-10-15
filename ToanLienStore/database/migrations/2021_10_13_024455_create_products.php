@@ -21,11 +21,11 @@ class Products extends Migration
             $table->string('image');
             $table->string('image_1');
             $table->string('image_2');
-            $table->integer('idCate');
+            $table->integer('idCate')->unsigned();
             $table->integer('price',11);
             $table->string('promotion',255);
             $table->string('shortDescription',255);
-            $table->string('origin',255);
+            $table->number('idOrigin')->unsigned();
             $table->interger('quantity');
             $table->string('unit',250);
             $table->integer('rank');
@@ -38,9 +38,10 @@ class Products extends Migration
             $table->boolean('show');
             $table->timestamps();
         });
-        
+
         Schema::table('products', function (Blueprint $table) {
             $table->foreign('idCate')->references('idCate')->on('categories');
+            $table->foreign('idOrigin')->references('idOrigin')->on('origins');
         });
     }
 
