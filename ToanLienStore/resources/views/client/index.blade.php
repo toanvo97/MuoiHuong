@@ -634,12 +634,11 @@
     </section>
     <!-- Blog Section End -->
 
-
-    <div id="preloader"></div>
-        <a href="#" class="back-to-top"><i class="fa fa-chevron-up"></i></a>
-    </div>
-
 @stop
+
+@section('preloader')
+    @include('client.layout.preloader')
+@endsection
 
 @section('footer')
     @include('client.layout.footer')

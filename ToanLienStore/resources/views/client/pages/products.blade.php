@@ -598,6 +598,10 @@
     <!-- Product Section End -->
 @stop
 
+@section('preloader')
+    @include('client.layout.preloader')
+@endsection
+
 @section('footer')
     @include('client.layout.footer')
 @endsection

@@ -54,14 +54,14 @@
                             <li><a href="#">Về cửa hàng</a>
                                 <ul class="header__menu__dropdown">
                                     <li><a href="./news.html">Tin tức</a></li>
-                                    <li><a href="./shop-details.html">Chi tiết sản phẩm</a></li>
+                                    <li><a href="{{route('productDetail')}}">Chi tiết sản phẩm</a></li>
                                     <li><a href="./shoping-cart.html">Giỏ hàng</a></li>
                                     <li><a href="./checkout.html">Check Out</a></li>
-                                    <li><a href="./blog-details.html">Chi tiết tin tức</a></li>
+                                    <li><a href="{{route('newsDetail')}}">Chi tiết tin tức</a></li>
                                 </ul>
                             </li>
-                            <li><a href="./blog.html">Tin tức</a></li>
-                            <li><a href="./contact.html">Liên hệ</a></li>
+                            <li><a href="{{route('news')}}">Tin tức</a></li>
+                            <li><a href="{{route('contact')}}">Liên hệ</a></li>
                         </ul>
                     </nav>
                 </div>
